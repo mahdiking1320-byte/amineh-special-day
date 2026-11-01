@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7eaf1">
+<meta name="description" content="A little birthday world made with care for Amineh.">
+<title>A Little Birthday World for Amineh ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#654c60;--muted:#927789;--rose:#c77f9d;--rose-deep:#a95f83;--pink:#f3d8e3;--lilac:#e8deef;--cream:#fffaf5;--line:#ead6e0;--shadow:0 18px 55px rgba(128,83,111,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font-family:Vazirmatn,system-ui,sans-serif;background:radial-gradient(ellipse at 12% 8%,#fff7f7 0,transparent 33%),radial-gradient(ellipse at 90% 24%,#efe6f6 0,transparent 30%),linear-gradient(145deg,#fff9f5 0%,#f8edf3 52%,#f1eaf6 100%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#c98da8 1px,transparent 1px);background-size:27px 27px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+button{font:inherit}
+.page{position:relative;width:min(1040px,calc(100% - 32px));margin:0 auto;padding:30px 0 42px}
+.topline{display:flex;justify-content:center;margin-bottom:14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid #ebd6e0;border-radius:999px;background:#fffaf7c9;color:#a06f89;font-size:12px;letter-spacing:.04em;box-shadow:0 5px 18px #9b6d8210}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:#cc88a5;box-shadow:0 0 0 4px #f6e0e8}
+.hero{text-align:center;margin:0 auto 20px}
+.hero h1{direction:ltr;font:clamp(46px,8vw,82px)/.98 'Great Vibes',cursive;color:#b87695;margin:8px 0 5px;text-shadow:0 5px 24px #d7a8bb55}
+.hero .subtitle{margin:0;color:#8f7186;font:italic clamp(17px,3vw,23px) 'Cormorant Garamond',serif;direction:ltr;letter-spacing:.04em}
+.art-frame{position:relative;width:100%;overflow:hidden;border-radius:27px;border:1px solid #fff;box-shadow:0 24px 65px rgba(119,75,100,.19);background:#e9d9e8;line-height:0}
+.art-frame:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px #ffffff80;pointer-events:none}
+.art-frame img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+.caption{text-align:center;font-size:12px;color:#9b8192;margin:11px 0 28px}
+.section-heading{text-align:center;margin:28px 0 17px}
+.section-heading .mini{font:italic 16px 'Cormorant Garamond',serif;color:#b17c97;direction:ltr}
+.section-heading h2{font-size:23px;font-weight:500;margin:2px 0 0;color:#795c71}
+.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.action-card{position:relative;min-width:0;overflow:hidden;text-align:center;padding:22px 16px 20px;border:1px solid #ead8e1;border-radius:22px;background:linear-gradient(155deg,#fffdfa 0%,#fff4f5 56%,#f7eff9 100%);box-shadow:var(--shadow);transition:transform .22s,box-shadow .22s}
+.action-card:hover{transform:translateY(-4px);box-shadow:0 22px 58px #855a751e}
+.card-icon{width:54px;height:54px;display:grid;place-items:center;margin:0 auto 12px;border-radius:18px;background:linear-gradient(145deg,#f9e2e9,#eee3f4);font-size:26px;box-shadow:inset 0 1px #fff}
+.action-card h3{margin:0 0 5px;font-weight:600;font-size:16px;color:#7d5d73}
+.action-card p{min-height:46px;margin:0 auto 14px;max-width:250px;color:#9b8293;font-size:12px;line-height:1.9}
+.soft-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #e4c2d1;border-radius:999px;padding:9px 17px;background:linear-gradient(120deg,#fff,#fff4f7);color:#a26683;cursor:pointer;font-size:12px;box-shadow:0 6px 16px #b47b9414;transition:.2s}
+.soft-btn:hover{background:#f8e4ec;transform:translateY(-1px)}
+.soft-btn:focus-visible,.star-btn:focus-visible,.close:focus-visible{outline:3px solid #c77f9d;outline-offset:3px}
+.progress{width:min(170px,100%);height:5px;margin:12px auto 0;border-radius:20px;background:#f0e4e9;overflow:hidden}
+.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#c27f9c,#e3aac0);transition:width .25s}
+.wish-section{margin-top:30px;padding:25px 22px 22px;border:1px solid #e8d7e3;border-radius:25px;background:linear-gradient(140deg,#fffaf6e8,#f7f0f9ed);box-shadow:var(--shadow);text-align:center;overflow:hidden}
+.wish-section h2{margin:0 0 4px;font-size:20px;font-weight:600}
+.wish-section .wish-sub{margin:0 0 17px;color:#9b8293;font-size:12px}
+.stars{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+.star-btn{width:46px;height:46px;border:1px solid #ead4e1;border-radius:16px;background:#fff9f6;color:#c082a0;font-size:20px;cursor:pointer;box-shadow:0 5px 16px #a8758a12;transition:.2s}
+.star-btn:hover,.star-btn.active{transform:translateY(-3px) rotate(-5deg);background:#f7e4ed;border-color:#d9adc0}
+.wish-result{min-height:44px;display:grid;place-items:center;margin:15px auto 0;padding:10px 14px;max-width:620px;border-radius:15px;background:#fffdfb;color:#8c6a80;font-size:13px;line-height:1.9;border:1px dashed #e5cbd8}
+.music-strip{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:16px;padding:14px 17px;border-radius:20px;border:1px solid #ead9e2;background:#fffaf7d9;box-shadow:0 10px 30px #9f6c8310}
+.track{display:flex;align-items:center;gap:12px;min-width:0}
+.track-art{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#f3d8e5,#e7def1);font-size:20px}
+.track-info{min-width:0;text-align:right}
+.track-title{font:600 17px 'Cormorant Garamond',serif;direction:ltr;text-align:right;color:#806078}
+.track-sub{color:#a58b9a;font-size:10px}
+.music-btn{flex:none;border:1px solid #e1bfd0;border-radius:999px;padding:9px 15px;background:#fff;color:#a36683;cursor:pointer;font-size:12px}
+.footer{text-align:center;color:#a48b9b;font-size:11px;margin:24px 0 0}
+.footer span{color:#c77f9d}
+.modal{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;padding:18px;background:#36263a85;backdrop-filter:blur(9px)}
+.modal.open{display:flex;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.dialog{position:relative;width:min(520px,100%);max-height:min(88vh,820px);overflow:auto;padding:34px 27px 27px;border:1px solid #f2dce5;border-radius:26px;background:linear-gradient(145deg,#fffdf8,#fff2f5 62%,#f5eff8);box-shadow:0 28px 90px #2b172b70;text-align:center}
+.dialog:before{content:"";position:absolute;inset:9px;border:1px solid #efd9e2;border-radius:19px;pointer-events:none}
+.close{position:absolute;top:15px;left:15px;z-index:2;width:34px;height:34px;border:0;border-radius:50%;background:#f6e6ec;color:#986b82;font-size:22px;cursor:pointer}
+.dialog-kicker{font:italic 17px 'Cormorant Garamond',serif;color:#bb809b;direction:ltr}
+.dialog h2{margin:4px 0 12px;color:#ae7190;font:clamp(34px,7vw,48px)/1.1 'Great Vibes',cursive;direction:ltr}
+.letter-copy{max-width:410px;margin:0 auto;color:#806a7a;font:italic 21px/1.62 'Cormorant Garamond',serif;direction:ltr;text-align:center}
+.letter-copy p{margin:8px 0}
+.signature{margin-top:16px!important;color:#b27693;font:34px 'Great Vibes',cursive!important}
+.gift-message{max-width:390px;margin:12px auto 0;color:#81687b;font:italic 22px/1.55 'Cormorant Garamond',serif;direction:ltr}
+.gift-ribbon{font-size:42px;margin:9px}
+.wheel-shell{position:relative;width:min(340px,76vw);aspect-ratio:1;margin:18px auto 12px;padding:9px;border-radius:50%;background:linear-gradient(145deg,#fff,#e7c8d8);box-shadow:0 12px 30px #93647d30,inset 0 0 0 1px #fff}
+#wheel{display:block;width:100%;height:100%;filter:drop-shadow(0 4px 8px #83596a30)}
+.pointer{position:absolute;z-index:3;top:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:27px solid #a96284;filter:drop-shadow(0 3px 2px #84546a55)}
+.wheel-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:65px;height:65px;display:grid;place-items:center;border:4px solid #f8e9ef;border-radius:50%;background:linear-gradient(145deg,#fffdf9,#f4dce7);color:#ae7190;font-size:25px;box-shadow:0 4px 12px #88576d30;pointer-events:none}
+.result{min-height:48px;margin:12px auto 2px;padding:10px 13px;max-width:370px;border-radius:14px;background:#fffaf7;border:1px dashed #e5cad8;color:#986b82;font-size:13px;line-height:1.8}
+.spin-btn{border:0;border-radius:999px;padding:11px 27px;background:linear-gradient(110deg,#c785a2,#aa7295);color:white;cursor:pointer;box-shadow:0 8px 19px #aa72953a}
+.spin-btn:disabled{opacity:.65;cursor:wait}
+.spark{position:fixed;z-index:40;pointer-events:none;color:#c982a2;font-size:18px;animation:floatAway 1.8s ease-out forwards}
+@keyframes floatAway{to{transform:translate(var(--dx),-90px) rotate(130deg);opacity:0}}
+@media(max-width:720px){.page{width:min(100% - 22px,620px);padding-top:20px}.actions{grid-template-columns:1fr;gap:11px}.action-card{display:grid;grid-template-columns:58px minmax(0,1fr);column-gap:12px;align-items:center;text-align:right;padding:15px}.card-icon{grid-row:1/4;margin:0}.action-card h3{font-size:15px}.action-card p{min-height:0;margin:2px 0 8px;max-width:none}.action-card .soft-btn{justify-self:start}.progress{grid-column:2;margin:8px 0 0}.art-frame{border-radius:18px}.wish-section{padding:22px 13px}.music-strip{padding:12px}.dialog{padding:32px 20px 23px}}
+@media(max-width:380px){.star-btn{width:40px;height:40px}.hero h1{font-size:45px}.track-title{font-size:15px}.music-btn{padding:8px 11px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="topline"><div class="eyebrow"><span class="dot"></span> A LITTLE BIRTHDAY WORLD <span>♡</span></div></div>
+  <header class="hero">
+    <h1>For Amineh</h1>
+    <p class="subtitle">a little world, wrapped in wishes</p>
+  </header>
+  <figure class="art-frame">
+    <img src="birthday-scene.webp" alt="A dreamy birthday room filled with fluffy kittens, a pink gift and a heartfelt letter" width="1600" height="900">
+  </figure>
+  <p class="caption">A tiny birthday universe made just to bring a smile ♡</p>
+
+  <div class="section-heading">
+    <div class="mini">little things, lovely surprises</div>
+    <h2>سه تا سورپرایز کوچولوی تو</h2>
+  </div>
+  <section class="actions" aria-label="Birthday surprises">
+    <article class="action-card">
+      <div class="card-icon">✉️</div>
+      <h3>یک نامه‌ی کوچک</h3>
+      <p>چند خط انگلیسی، با آرزوهایی که از ته دل نوشته شده‌اند.</p>
+      <button class="soft-btn" id="letterBtn">خواندن نامه <span>♡</span></button>
+    </article>
+    <article class="action-card">
+      <div class="card-icon">🎁</div>
+      <h3>کادوی سه‌مرحله‌ای</h3>
+      <p id="giftHint">سه بار روی دکمه بزن تا سورپرایز داخل جعبه باز شود.</p>
+      <button class="soft-btn" id="giftBtn">باز کردن کادو <span>✧</span></button>
+      <div class="progress" aria-label="Gift opening progress"><span id="giftProgress"></span></div>
+    </article>
+    <article class="action-card">
+      <div class="card-icon">🎡</div>
+      <h3>گردونه‌ی شانس</h3>
+      <p>بچرخون تا یکی از اتفاق‌های قشنگ این روز نصیبت بشه.</p>
+      <button class="soft-btn" id="wheelBtn">چرخاندن گردونه <span>✦</span></button>
+    </article>
+  </section>
+
+  <section class="wish-section">
+    <div class="section-heading" style="margin:0 0 15px">
+      <div class="mini">make a little wish</div>
+      <h2>باغ ستاره‌های آرزو ✨</h2>
+    </div>
+    <p class="wish-sub">یکی از ستاره‌ها رو انتخاب کن تا آرزوی کوچولوش رو برات روشن کنه.</p>
+    <div class="stars" id="stars">
+      <button class="star-btn" data-wish="امیدوارم هر روزت، حتی با یک اتفاق کوچیک، دلیل تازه‌ای برای لبخند داشته باشه." aria-label="ستاره اول">✦</button>
+      <button class="star-btn" data-wish="امیدوارم آدم‌های مهربون و لحظه‌های قشنگ همیشه راهشون رو به سمتت پیدا کنن." aria-label="ستاره دوم">✧</button>
+      <button class="star-btn" data-wish="امیدوارم رویاهایی که توی دلت نگه داشتی، یکی‌یکی رنگ واقعیت بگیرن." aria-label="ستاره سوم">☆</button>
+      <button class="star-btn" data-wish="امیدوارم امسال پر از شروع‌های تازه، خبرهای خوب و خاطره‌های دوست‌داشتنی باشه." aria-label="ستاره چهارم">✦</button>
+      <button class="star-btn" data-wish="امیدوارم همیشه فرصت داشته باشی به چیزهایی که واقعاً خوشحالت می‌کنن نزدیک‌تر بشی." aria-label="ستاره پنجم">✧</button>
+      <button class="star-btn" data-wish="و از همه مهم‌تر، امیدوارم با خودت مهربون باشی و به مسیر قشنگت افتخار کنی." aria-label="ستاره ششم">☆</button>
+    </div>
+    <div class="wish-result" id="wishResult" aria-live="polite">یک ستاره انتخاب کن؛ شاید یک آرزوی قشنگ منتظرته…</div>
+  </section>
+
+  <section class="music-strip" aria-label="Birthday music">
+    <div class="track">
+      <div class="track-art">♫</div>
+      <div class="track-info">
+        <div class="track-title">Moonlight for You</div>
+        <div class="track-sub">an original romantic instrumental · just for this day</div>
+      </div>
+    </div>
+    <button class="music-btn" id="musicBtn" aria-pressed="false">▶ پخش موسیقی</button>
+  </section>
+  <footer class="footer">made with care, little stars & <span>♡</span></footer>
+</main>
+
+<div class="modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+ <section class="dialog">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="dialog-kicker">a note from the heart</div>
+  <h2 id="letterTitle">A little letter for you</h2>
+  <div class="letter-copy">
+   <p>Dear Amineh,</p>
+   <p>Some people make ordinary days feel a little brighter, simply by being themselves. I hope this new chapter brings you peaceful mornings, unexpected laughter, kind people, and countless little reasons to smile.</p>
+   <p>May your dreams find their way to you, one beautiful step at a time. Keep shining in your own way, and never forget how much goodness the world can hold.</p>
+   <p>Wishing you a year filled with gentle surprises and memories worth keeping.</p>
+   <p class="signature">With warmest wishes ♡</p>
+  </div>
+ </section>
+</div>
+
+<div class="modal" id="giftModal" role="dialog" aria-modal="true" aria-labelledby="giftTitle">
+ <section class="dialog">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="gift-ribbon">🎀 ✨ 🎀</div>
+  <div class="dialog-kicker">something sweet, just for you</div>
+  <h2 id="giftTitle">A little box of joy</h2>
+  <p class="gift-message">Inside this little box: 365 chances to find something wonderful. May today bring you sweet surprises, and may the year ahead be full of moments you will want to remember.</p>
+  <div class="gift-ribbon">🌷 💗 🌷</div>
+ </section>
+</div>
+
+<div class="modal" id="wheelModal" role="dialog" aria-modal="true" aria-labelledby="wheelTitle">
+ <section class="dialog">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="dialog-kicker">let the lovely things find you</div>
+  <h2 id="wheelTitle">The Wish Wheel</h2>
+  <p style="font-size:12px;color:#9a8091;margin:0">بچرخون و ببین کدوم آرزوی قشنگ انتخابت می‌شه!</p>
+  <div class="wheel-shell"><div class="pointer"></div><canvas id="wheel" width="700" height="700" aria-label="A colorful wheel of eight birthday wishes"></canvas><div class="wheel-center">♡</div></div>
+  <button class="spin-btn" id="spin">بچرخونش ✨</button>
+  <div class="result" id="result" aria-live="polite">شاید شانس امروزت یک سورپرایز قشنگ باشه…</div>
+ </section>
+</div>
+
+<audio id="birthdayAudio" src="moonlight-for-you.wav" preload="none" loop></audio>
+<script>
+const $=id=>document.getElementById(id);
+function openModal(id){$(id).classList.add('open');document.body.style.overflow='hidden';const c=$(id).querySelector('[data-close]');if(c)c.focus()}
+function closeModals(){document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'));document.body.style.overflow=''}
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeModals));
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModals()}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModals()});
+$('letterBtn').onclick=()=>openModal('letterModal');
+$('wheelBtn').onclick=()=>openModal('wheelModal');
+
+// The gift opens after exactly three taps.
+let giftTaps=0,giftOpened=false;
+$('giftBtn').addEventListener('click',()=>{
+ if(giftOpened){openModal('giftModal');return;}
+ giftTaps++;
+ $('giftProgress').style.width=(giftTaps/3*100)+'%';
+ const left=3-giftTaps;
+ $('giftHint').textContent=left?`چه خوب! فقط ${left} بار دیگه ♡`:'سورپرایزت باز شد! ♡';
+ $('giftBtn').textContent=left?`یک لمس دیگه ${'♡'.repeat(giftTaps)}`:'دیدن سورپرایز ✨';
+ sparkleBurst();
+ if(giftTaps===3){giftOpened=true;setTimeout(()=>openModal('giftModal'),280);}
+});
+function sparkleBurst(){const marks=['✦','♡','✧','❀','⋆'];for(let i=0;i<16;i++){const s=document.createElement('span');s.className='spark';s.textContent=marks[Math.random()*marks.length|0];s.style.left=(20+Math.random()*60)+'%';s.style.top=(35+Math.random()*45)+'%';s.style.setProperty('--dx',(Math.random()*150-75)+'px');document.body.appendChild(s);setTimeout(()=>s.remove(),1900)}}
+
+// Eight elegant segments with different birthday wishes.
+const choices=[
+ {label:'آرزوی\nقشنگ',result:'یک آرزوی قشنگت همین امروز یک قدم به واقعیت نزدیک‌تر بشه! ✨',color:'#f5d9e4'},
+ {label:'سورپرایز\nکوچولو',result:'یک سورپرایز شیرین و غیرمنتظره در راهته! 🎀',color:'#eadff1'},
+ {label:'خنده‌های\nزیاد',result:'امروز و روزهای بعد، پر از خنده‌های از ته دل باشه! 🍓',color:'#f8e7d8'},
+ {label:'اتفاقای\nخوب',result:'اتفاق‌های خوب، یکی پس از دیگری پیدات کنن! 🌷',color:'#e6e9d9'},
+ {label:'شانسِ\nدرخشان',result:'ستاره‌ی شانست امشب حسابی می‌درخشه! 🍀',color:'#f4dce8'},
+ {label:'خاطره‌ی\nشیرین',result:'یک خاطره‌ی قشنگ بساز که تا مدت‌ها لبخند بیاره! 💗',color:'#e4dff0'},
+ {label:'ستاره‌ی\nامروز',result:'امروز نوبت توئه که بدرخشی؛ درست مثل یک ستاره! ⭐',color:'#f8e6d2'},
+ {label:'فصلِ\nتازه',result:'یک فصل تازه با کلی فرصت و لحظه‌ی دوست‌داشتنی شروع بشه! 🦋',color:'#eadfe9'}
+];
+const canvas=$('wheel'),ctx=canvas.getContext('2d'),R=350,arc=Math.PI*2/choices.length;
+let rotation=0,spinning=false;
+function drawWheel(){ctx.clearRect(0,0,700,700);choices.forEach((item,i)=>{
+ const a=rotation+i*arc-Math.PI/2;
+ ctx.beginPath();ctx.moveTo(R,R);ctx.arc(R,R,329,a,a+arc);ctx.closePath();ctx.fillStyle=item.color;ctx.fill();ctx.strokeStyle='#fffaf9';ctx.lineWidth=7;ctx.stroke();
+ ctx.save();ctx.translate(R,R);ctx.rotate(a+arc/2);ctx.textAlign='center';ctx.textBaseline='middle';ctx.direction='rtl';ctx.fillStyle='#805e74';ctx.font='600 23px Vazirmatn, sans-serif';
+ const lines=item.label.split('\n');lines.forEach((line,j)=>ctx.fillText(line,244,(j-(lines.length-1)/2)*30));ctx.restore();
+ });
+ ctx.beginPath();ctx.arc(R,R,48,0,Math.PI*2);ctx.fillStyle='#fffaf7';ctx.fill();ctx.strokeStyle='#e0bfd0';ctx.lineWidth=7;ctx.stroke();ctx.fillStyle='#ba7898';ctx.font='34px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('♡',R,R);
+}
+drawWheel();
+$('spin').addEventListener('click',()=>{if(spinning)return;spinning=true;$('spin').disabled=true;$('result').textContent='گردونه داره آرزوت رو انتخاب می‌کنه…';const start=rotation;const extra=Math.PI*2*(5+Math.random()*3)+Math.random()*Math.PI*2;const t0=performance.now(),duration=4700;
+ function frame(now){const p=Math.min(1,(now-t0)/duration),ease=1-Math.pow(1-p,4);rotation=start+extra*ease;drawWheel();if(p<1)requestAnimationFrame(frame);else{spinning=false;$('spin').disabled=false;const normalized=(( -rotation)%(Math.PI*2)+Math.PI*2)%(Math.PI*2);const index=Math.floor(normalized/arc)%choices.length;$('result').textContent=choices[index].result;sparkleBurst();}}
+ requestAnimationFrame(frame);
+});
+
+// A locally bundled original romantic instrumental. Playback begins only after a tap.
+const audio=$('birthdayAudio');
+$('musicBtn').addEventListener('click',async()=>{
+ try{
+  if(audio.paused){await audio.play();$('musicBtn').textContent='Ⅱ توقف موسیقی';$('musicBtn').setAttribute('aria-pressed','true');}
+  else{audio.pause();$('musicBtn').textContent='▶ پخش موسیقی';$('musicBtn').setAttribute('aria-pressed','false');}
+ }catch(e){$('musicBtn').textContent='پخش نشد؛ دوباره بزن';}
+});
+audio.addEventListener('ended',()=>{$('musicBtn').textContent='▶ پخش موسیقی';$('musicBtn').setAttribute('aria-pressed','false')});
+// Wish-garden stars reveal their own note.
+document.querySelectorAll('.star-btn').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.star-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');$('wishResult').textContent=btn.dataset.wish;sparkleBurst();
+}));
+</script>
+</body>
+</html>
