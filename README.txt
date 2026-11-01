@@ -1,13 +1,9 @@
 A Little Birthday World for Amineh
 
-Files:
-- index.html: the complete responsive birthday website
-- birthday-scene.webp: the supplied kitten birthday artwork
-- moonlight-for-you.wav: an original romantic-style instrumental composed for this page
+Files in this folder:
+- index.html: the interactive birthday website
+- birthday-scene.webp: the illustrated birthday scene (tap the letter or gift directly)
+- moonlight-for-you.wav: original romantic instrumental background music
 
-To publish on GitHub Pages:
-1. Extract this ZIP.
-2. Upload index.html, birthday-scene.webp, and moonlight-for-you.wav to the root of your repository.
-3. In Settings > Pages, select Deploy from a branch, branch main, folder /(root), then Save.
-
-The music starts only after the visitor presses Play, as required by modern browsers.
+To publish on GitHub Pages, upload all files in this folder to the root of your repository.
+Make sure index.html is in the repository root, then enable Settings > Pages > Deploy from a branch > main > /(root).

@@ -25,7 +25,13 @@ button{font:inherit}
 .hero .subtitle{margin:0;color:#8f7186;font:italic clamp(17px,3vw,23px) 'Cormorant Garamond',serif;direction:ltr;letter-spacing:.04em}
 .art-frame{position:relative;width:100%;overflow:hidden;border-radius:27px;border:1px solid #fff;box-shadow:0 24px 65px rgba(119,75,100,.19);background:#e9d9e8;line-height:0}
 .art-frame:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px #ffffff80;pointer-events:none}
-.art-frame img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+ .art-frame img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+.art-hotspot{position:absolute;z-index:2;display:block;padding:0;border:1px solid transparent;border-radius:18px;background:transparent;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:background .2s,border-color .2s,box-shadow .2s}
+.art-hotspot:hover{background:rgba(255,250,255,.10);border-color:rgba(255,255,255,.52);box-shadow:inset 0 0 0 2px rgba(255,255,255,.16)}
+.art-hotspot:focus-visible{outline:3px solid #fff;outline-offset:2px;background:rgba(255,250,255,.16);box-shadow:0 0 0 6px rgba(183,116,151,.45)}
+.letter-hotspot{left:18%;top:41%;width:37%;height:45%}
+.gift-hotspot{left:52%;top:43%;width:36%;height:45%}
+@media(max-width:720px){.art-hotspot{border-radius:12px}.letter-hotspot{left:17%;top:41%;width:38%;height:45%}.gift-hotspot{left:51%;top:43%;width:38%;height:45%}}
 .caption{text-align:center;font-size:12px;color:#9b8192;margin:11px 0 28px}
 .section-heading{text-align:center;margin:28px 0 17px}
 .section-heading .mini{font:italic 16px 'Cormorant Garamond',serif;color:#b17c97;direction:ltr}
@@ -91,10 +97,12 @@ button{font:inherit}
     <h1>For Amineh</h1>
     <p class="subtitle">a little world, wrapped in wishes</p>
   </header>
-  <figure class="art-frame">
+  <figure class="art-frame" aria-label="تصویر تعاملی تولد؛ برای باز کردن نامه یا کادو روی خودشان بزن">
     <img src="birthday-scene.webp" alt="A dreamy birthday room filled with fluffy kittens, a pink gift and a heartfelt letter" width="1600" height="900">
+    <button class="art-hotspot letter-hotspot" id="letterHotspot" type="button" aria-label="باز کردن نامه‌ی داخل تصویر" title="برای باز کردن نامه کلیک کن"></button>
+    <button class="art-hotspot gift-hotspot" id="giftHotspot" type="button" aria-label="باز کردن جعبه‌کادوی داخل تصویر" title="برای باز کردن کادو کلیک کن"></button>
   </figure>
-  <p class="caption">A tiny birthday universe made just to bring a smile ♡</p>
+  <p class="caption">Tap the letter or the gift in the picture to open your surprise ♡</p>
 
   <div class="section-heading">
     <div class="mini">little things, lovely surprises</div>
@@ -109,10 +117,9 @@ button{font:inherit}
     </article>
     <article class="action-card">
       <div class="card-icon">🎁</div>
-      <h3>کادوی سه‌مرحله‌ای</h3>
-      <p id="giftHint">سه بار روی دکمه بزن تا سورپرایز داخل جعبه باز شود.</p>
+      <h3>کادوی کوچولوی تو</h3>
+      <p id="giftHint">برای باز شدن سورپرایز، روی جعبه‌کادو در تصویر یا دکمه زیر بزن.</p>
       <button class="soft-btn" id="giftBtn">باز کردن کادو <span>✧</span></button>
-      <div class="progress" aria-label="Gift opening progress"><span id="giftProgress"></span></div>
     </article>
     <article class="action-card">
       <div class="card-icon">🎡</div>
@@ -159,10 +166,10 @@ button{font:inherit}
   <h2 id="letterTitle">A little letter for you</h2>
   <div class="letter-copy">
    <p>Dear Amineh,</p>
-   <p>Some people make ordinary days feel a little brighter, simply by being themselves. I hope this new chapter brings you peaceful mornings, unexpected laughter, kind people, and countless little reasons to smile.</p>
-   <p>May your dreams find their way to you, one beautiful step at a time. Keep shining in your own way, and never forget how much goodness the world can hold.</p>
-   <p>Wishing you a year filled with gentle surprises and memories worth keeping.</p>
-   <p class="signature">With warmest wishes ♡</p>
+   <p>I know you’ve been going through a difficult time.</p>
+   <p>I wanted to do this little thing to make you smile.</p>
+   <p>I hope things get easier and you feel better soon.</p>
+   <p class="signature">With care, ♡</p>
   </div>
  </section>
 </div>
@@ -184,7 +191,7 @@ button{font:inherit}
   <div class="dialog-kicker">let the lovely things find you</div>
   <h2 id="wheelTitle">The Wish Wheel</h2>
   <p style="font-size:12px;color:#9a8091;margin:0">بچرخون و ببین کدوم آرزوی قشنگ انتخابت می‌شه!</p>
-  <div class="wheel-shell"><div class="pointer"></div><canvas id="wheel" width="700" height="700" aria-label="A colorful wheel of eight birthday wishes"></canvas><div class="wheel-center">♡</div></div>
+  <div class="wheel-shell"><div class="pointer"></div><canvas id="wheel" width="700" height="700" aria-label="A colorful wheel of seven birthday wishes"></canvas><div class="wheel-center">♡</div></div>
   <button class="spin-btn" id="spin">بچرخونش ✨</button>
   <div class="result" id="result" aria-live="polite">شاید شانس امروزت یک سورپرایز قشنگ باشه…</div>
  </section>
@@ -198,24 +205,15 @@ function closeModals(){document.querySelectorAll('.modal').forEach(m=>m.classLis
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeModals));
 document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModals()}));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModals()});
-$('letterBtn').onclick=()=>openModal('letterModal');
-$('wheelBtn').onclick=()=>openModal('wheelModal');
-
-// The gift opens after exactly three taps.
-let giftTaps=0,giftOpened=false;
-$('giftBtn').addEventListener('click',()=>{
- if(giftOpened){openModal('giftModal');return;}
- giftTaps++;
- $('giftProgress').style.width=(giftTaps/3*100)+'%';
- const left=3-giftTaps;
- $('giftHint').textContent=left?`چه خوب! فقط ${left} بار دیگه ♡`:'سورپرایزت باز شد! ♡';
- $('giftBtn').textContent=left?`یک لمس دیگه ${'♡'.repeat(giftTaps)}`:'دیدن سورپرایز ✨';
- sparkleBurst();
- if(giftTaps===3){giftOpened=true;setTimeout(()=>openModal('giftModal'),280);}
-});
+// Both the illustration hotspots and the lower buttons open the same surprises.
+$('letterBtn').addEventListener('click',()=>openModal('letterModal'));
+$('letterHotspot').addEventListener('click',()=>openModal('letterModal'));
+$('giftBtn').addEventListener('click',()=>{sparkleBurst();openModal('giftModal')});
+$('giftHotspot').addEventListener('click',()=>{sparkleBurst();openModal('giftModal')});
+$('wheelBtn').addEventListener('click',()=>openModal('wheelModal'));
 function sparkleBurst(){const marks=['✦','♡','✧','❀','⋆'];for(let i=0;i<16;i++){const s=document.createElement('span');s.className='spark';s.textContent=marks[Math.random()*marks.length|0];s.style.left=(20+Math.random()*60)+'%';s.style.top=(35+Math.random()*45)+'%';s.style.setProperty('--dx',(Math.random()*150-75)+'px');document.body.appendChild(s);setTimeout(()=>s.remove(),1900)}}
 
-// Eight elegant segments with different birthday wishes.
+// Seven elegant segments with different birthday wishes.
 const choices=[
  {label:'آرزوی\nقشنگ',result:'یک آرزوی قشنگت همین امروز یک قدم به واقعیت نزدیک‌تر بشه! ✨',color:'#f5d9e4'},
  {label:'سورپرایز\nکوچولو',result:'یک سورپرایز شیرین و غیرمنتظره در راهته! 🎀',color:'#eadff1'},
@@ -223,8 +221,7 @@ const choices=[
  {label:'اتفاقای\nخوب',result:'اتفاق‌های خوب، یکی پس از دیگری پیدات کنن! 🌷',color:'#e6e9d9'},
  {label:'شانسِ\nدرخشان',result:'ستاره‌ی شانست امشب حسابی می‌درخشه! 🍀',color:'#f4dce8'},
  {label:'خاطره‌ی\nشیرین',result:'یک خاطره‌ی قشنگ بساز که تا مدت‌ها لبخند بیاره! 💗',color:'#e4dff0'},
- {label:'ستاره‌ی\nامروز',result:'امروز نوبت توئه که بدرخشی؛ درست مثل یک ستاره! ⭐',color:'#f8e6d2'},
- {label:'فصلِ\nتازه',result:'یک فصل تازه با کلی فرصت و لحظه‌ی دوست‌داشتنی شروع بشه! 🦋',color:'#eadfe9'}
+ {label:'ستاره‌ی\nامروز',result:'امروز نوبت توئه که بدرخشی؛ درست مثل یک ستاره! ⭐',color:'#f8e6d2'}
 ];
 const canvas=$('wheel'),ctx=canvas.getContext('2d'),R=350,arc=Math.PI*2/choices.length;
 let rotation=0,spinning=false;
